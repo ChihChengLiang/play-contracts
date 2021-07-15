@@ -12,7 +12,7 @@ contract Parent {
 
     function run() external {
         parentState = 5566;
-        (bool success,  ) = address(child).delegatecall(
+        (bool success,  ) = address(child).call(
             abi.encodeWithSignature("run()")
         );
         require(!success);
